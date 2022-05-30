@@ -12,8 +12,12 @@ DevOps come is of a open culture that promotes resposibilie, trust and respect. 
 ## Role of DevOps
 devOps consultant is to be able to work along side both developers and the operator. 
 
+## What is Development env and why do we need it?
 
-# Most used commands
+
+## What are the four pillars of DevOps?
+
+## Most used commands
 ___
 - Update ubuntu: `sudo apt-get update -y` 
 - upgrade ubuntu: `sudo apt-get upgrade -y`
