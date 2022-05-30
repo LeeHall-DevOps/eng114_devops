@@ -1,5 +1,5 @@
 # what is DevOps
 
-##Why DevOps - Benifits
+## Why DevOps - Benifits
 
 Role of Devops
