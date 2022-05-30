@@ -1,4 +1,4 @@
-# what is DevOps
+# What is DevOps
 
 # Why DevOps - Benifits
 
