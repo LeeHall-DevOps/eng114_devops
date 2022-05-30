@@ -7,11 +7,13 @@ DevOps come is of a open culture that promotes resposibilie, trust and respect. 
 - Flexibility - teams are able to keep up with stake holder changes.
 - reduce cost - due to reuseable code employee are only paid to write the code once. 
 
+
+
 ## Role of DevOps
-The role of a devOps consultant is to be ab
+devOps consultant is to be able to work along side both developers and the operator. 
 
 
-- Most used commands
+# Most used commands
 ___
 - Update ubuntu: `sudo apt-get update -y` 
 - upgrade ubuntu: `sudo apt-get upgrade -y`
