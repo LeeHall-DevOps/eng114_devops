@@ -5,3 +5,9 @@ DevOps is the merging of the development team and operations teams, which allow 
 
 
 # Role of DevOps
+
+- Most used commands
+- Update & upgrade ubuntu `sudo apt-get update -y`
+- Upgrade `sudo apt-get upgrade -y`
+- Install nginx `sudo apt-get install nginx`
+- Check nginx status `systemct1 status nginx` or `stop` or `restart`
