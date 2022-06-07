@@ -1,28 +1,35 @@
 #!/bin/bash
 
-#update
+#update & upgrade
 sudo apt-get update -y
 
-#upgrade
 sudo apt-get upgrade -y
 
-#install nginx
+# install nginx
 sudo apt-get install nginx -y
 
-#start nginx
+# install nodejs v6
+sudo curl -sL https://deb.nodesource.com/setup_6.x | sudo -E bash -
+
+# install nodejs part 2
+sudo apt-get install nodejs -y
+
+# install pm2
+sudo npm install pm2 -g
+
+# change port number on the app
+
+cd /etc/nginx/sites-available/
+
+# start nginx
 sudo systemctl start nginx
 
-#enable nginx
+# enable nginx
 sudo systemctl enable nginx
 
-# change the dir to 'cd app/app/app/app'
-cd ./app/app/app/app/
+# cd into app location
+cd ~/app/app/app/app
 
-# install npm
-sudo npm install pm 2 -g
+#install and start npm
+npm install && npm start -d
 
-# install js
-npm install
-
-# start node program
-npm start
