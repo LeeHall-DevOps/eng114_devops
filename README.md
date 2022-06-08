@@ -133,10 +133,12 @@ proxy_pass passes the url through to a HTTP server
 ## What is Cloud computing with AWS?
 
 ### AWS Global
-info `aws-amazon.com/about-aws/global-infrastruture/
+information about AWS con be found at: [AWS-Global infrastructure linked here](https://aws.amazon.com/about-aws/global-infrastructure/) 
 
 role of region
 make sure to deploy in the right location for client
+
+
 
 azs = multi availiblity zones
 we need at least two availibility zones, reason being if zone_one goes off line. the data is diverted to zone_two. until zone_one is fixed
@@ -145,10 +147,33 @@ buzz word
 highly available, scaliable
 
 ## What are the benefits?
-
+![aws benifits image](./images/aws_benefits.jpg)
 
 
 ## How does it fit into DevOps?
+Information resource [aws.amazon.com/devops/](https://aws.amazon.com/devops/)
+
+- Get started Fast
+Providing you have an Aws account, you can use any AWS service without any setup or installation.
+
+- Fully managed services
+AWS manages all the software and hardware, this leaves the dev to focus on the project
+
+- Built for scalabilitie
+Aws services are built to scale up or down as needed with no time delay in the service.
+
+- Programmable
+AWS gives the account holder the option to use the services command lind, API or SDKs to model and provision AWS resources.
+
+- Automation
+AWS assists in automation so you can build quicker and more effiently. with AWS you can automate manual tasks or processes like.
+1. Deployment
+2. Test work flow
+3. Container management
+4. configuration management
+
+- Secure
+AWS has data security in place called Identity and Access Management or (IAM), IAM sets the user permission which gives the account holder control over who can access it. 
 
 
 ## Data centre video and notes
