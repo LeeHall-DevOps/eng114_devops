@@ -91,14 +91,29 @@ config.vm.provision "file", source: "./provision.sh", destination: "$HOME/"
 ---
 #### open Git Bash (Ensure you are admin when running commands in command line)
 1. Type `vagrant init "ubuntu/xenial64"` in command line, press enter. (This will initialize the folders for vagrant)
-2. Type `vagrant up`, press Enter. (This starts the vm)
-3. Type `vagrant ssh`, press Enter. (This transfers you into vm)
+
+2. Type `vagrant up` 
+press Enter. (This starts the vm)
+
+3. Type `vagrant ssh`
+press Enter. (This transfers you into vm)
+
 #### once inside vm
-4. Type `sudo apt-get update -y (This gets updates for VM, the (-y) says yes to any questions automatically)
-5. Type `sudo apt-get upgrade -y(This updates the VM's features)
-6. Type `sudo apt-get install nginx -y(This installs software needed)
-7. Type `sudo systemctl enable nginx -y` (This enables nginxs to work without requesting permission)
-8. Type `sudo systemctl status ngnix -y` (This checks the vm network is working)
+4. Type `sudo apt-get update -y` 
+(This gets updates for VM, the (-y) says yes to any questions automatically)
+
+5. Type `sudo apt-get upgrade -y`
+(This updates the VM's features)
+
+6. Type `sudo apt-get install nginx -y` 
+(This installs software needed)
+
+7. Type `sudo systemctl enable nginx -y` 
+(This enables nginxs to work without requesting permission)
+
+8. Type `sudo systemctl status ngnix -y` 
+(This checks the vm network is working)
+
 9. Type `curl -sL http://deb.nodesource.com/setup_6.x | sudo -E bash -y` (Download) 
 
 
@@ -116,9 +131,9 @@ sudo nano /etc/nginx/sites-available/default
     }
 
 
-sudo nginx -t to make sure that there are no syntax errors
+`sudo nginx -t` to make sure that there are no syntax errors
 
-sudo systemctl restart nginx to restart nginx and set up the reverse proxy
+`sudo systemctl restart nginx` to restart nginx and set up the reverse proxy
 
 You always have to change the port number after the colon to match your needs
 
@@ -223,3 +238,15 @@ scp or rsync
 - size of machine
 - choosing an OS - ubuntu 18.04LTS
 
+##### process 
+search ec2,
+create instance
+select machine - ubuntu 18.04 LTS server
+Select tags eng114_...
+Select security rules 
+- ec2 allows port 22 by default
+- nginx port 80
+- app port 3000
+
+##### copy files from localhost to EC2
+`scp -i [key_file] -r [path to folder/file you want copied] [path to location you want file to go to]:~`
