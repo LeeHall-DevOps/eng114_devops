@@ -154,19 +154,20 @@ highly available, scaliable
 ## Data centre video and notes
 ![Video image](./images/aws_inside_data_centre.jpg)
 [Inside a Google data center](https://www.youtube.com/watch?v=XZmGGAbHqa0)
-A giant building with lots of machines
-south carolina one node
-up 24/7
-3,000,000 man hours without default
 
-info security wrote book on info secruity
+- A giant building with lots of machines
+- south carolina one node
+- Operational and online twenty-four hours a day, seven days a week 
+- Record of 3,000,000 man hours without default at time of recording 
 
-1. id badge
-2. secure corridor with id and retina check
+### Security info 
+
+1. ID badges checked at gate
+2.  once in building personal go through rotating security corridor, then ID and retina checked. 
 3. room temp 80f
 4. custom server rack
-5. cooling tech changed 5 times
-6. cooling coils and towers
+5. cooling tech changed 5 times since data centre opened.
+6. cooling coils above server racks collect heat then transfer to towers on the roof to cool. then recirculated/
 7. old harddrives cleared and crushed then recycled
 
 innovation always moving
