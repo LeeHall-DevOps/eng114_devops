@@ -147,7 +147,7 @@ buzz word
 highly available, scaliable
 
 ## What are the benefits?
-![aws benifits image](./images/aws_benefits.jpg)
+![aws benefits image](./images/aws_benefits.jpg)
 
 
 ## How does it fit into DevOps?
