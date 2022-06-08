@@ -99,7 +99,7 @@ config.vm.provision "file", source: "./provision.sh", destination: "$HOME/"
 6. Type `sudo apt-get install nginx -y(This installs software needed)
 7. Type `sudo systemctl enable nginx -y` (This enables nginxs to work without requesting permission)
 8. Type `sudo systemctl status ngnix -y` (This checks the vm network is working)
-9. Type `curl-sL http://deb.nodesource.com/setup_6.x | sudo -E bash -y` (Download) 
+9. Type `curl -sL http://deb.nodesource.com/setup_6.x | sudo -E bash -y` (Download) 
 
 
 ## Reverse Proxy
@@ -207,3 +207,19 @@ example xmas
 xmas service is peek time as oppose to janurary
 
 cloud server peek time is always
+
+### AWS EC2
+
+#### Common commands for AWS EC2
+scp or rsync
+
+#### Planning
+- choose family - t2 micro / medium / large ..
+
+- hard drive
+- memory
+- space
+- fire wall
+- size of machine
+- choosing an OS - ubuntu 18.04LTS
+
