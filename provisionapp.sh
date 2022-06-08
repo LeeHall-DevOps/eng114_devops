@@ -15,6 +15,15 @@ sudo systemctl enable nginx
 # nginx status
 # sudo systemctl status nginx (debug tool)
 
+# adding export to .bashrc
+echo "export DB_HOST=mongodb://192.168.10.150:27017/posts" >> ~/.bashrc 
+
+# source .bashrc
+source ~/.bashrc
+
+# print enviroment
+printenv DB_HOST mongodb://192.168.10.150:27017/posts
+
 
 # download nodejs
 sudo curl -sL http://deb.nodesource.com/setup_6.x | sudo -E bash -

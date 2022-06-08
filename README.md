@@ -100,3 +100,84 @@ config.vm.provision "file", source: "./provision.sh", destination: "$HOME/"
 7. Type `sudo systemctl enable nginx -y` (This enables nginxs to work without requesting permission)
 8. Type `sudo systemctl status ngnix -y` (This checks the vm network is working)
 9. Type `curl-sL http://deb.nodesource.com/setup_6.x | sudo -E bash -y` (Download) 
+
+
+## Reverse Proxy
+sudo nano /etc/nginx/sites-available/default
+
+### Change default file
+    location / {
+        proxy_pass http://localhost:3000;
+        proxy_http_version 1.1;
+        proxy_set_header Upgrade $http_upgrade;
+        proxy_set_header Connection 'upgrade';
+        proxy_set_header Host $host;
+        proxy_cache_bypass $http_upgrade;
+    }
+
+
+sudo nginx -t to make sure that there are no syntax errors
+
+sudo systemctl restart nginx to restart nginx and set up the reverse proxy
+
+You always have to change the port number after the colon to match your needs
+
+location allows you to provide access to other applications on the same server. For example, if location /some/path/, the url would be http://www.example.com/some/path/index.html
+
+proxy_pass passes the url through to a HTTP server
+
+
+
+
+
+## What is Cloud computing with AWS?
+
+### AWS Global
+info `aws-amazon.com/about-aws/global-infrastruture/
+
+role of region
+make sure to deploy in the right location for client
+
+azs = multi availiblity zones
+we need at least two availibility zones, reason being if zone_one goes off line. the data is diverted to zone_two. until zone_one is fixed
+
+buzz word
+highly available, scaliable
+
+## What are the benefits?
+
+
+
+## How does it fit into DevOps?
+
+
+## Data centre video and notes
+![Video image](./images/aws_inside_data_centre.jpg)
+[Inside a Google data center](https://www.youtube.com/watch?v=XZmGGAbHqa0)
+A giant building with lots of machines
+south carolina one node
+up 24/7
+3,000,000 man hours without default
+
+info security wrote book on info secruity
+
+1. id badge
+2. secure corridor with id and retina check
+3. room temp 80f
+4. custom server rack
+5. cooling tech changed 5 times
+6. cooling coils and towers
+7. old harddrives cleared and crushed then recycled
+
+innovation always moving
+
+## capital expense
+rent building
+buying hardware
+hiring security guards
+utilitie bills
+
+example xmas
+xmas service is peek time as oppose to janurary
+
+cloud server peek time is always

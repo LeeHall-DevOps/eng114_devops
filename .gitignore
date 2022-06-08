@@ -1,2 +1,4 @@
 .vagrant/
 ubuntu-xenial-16.04-cloudimg-console.log
+
+apt_key = sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv D68FA50FEA312927
