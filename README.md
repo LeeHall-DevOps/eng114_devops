@@ -158,8 +158,9 @@ make sure to deploy in the right location for client
 azs = multi availiblity zones
 we need at least two availibility zones, reason being if zone_one goes off line. the data is diverted to zone_two. until zone_one is fixed
 
-buzz word
-highly available, scaliable
+### buzz word
+- highly available 
+- scaliable
 
 ## What are the benefits?
 ![aws benefits image](./images/aws_benefits.jpg)
@@ -212,11 +213,11 @@ AWS has data security in place called Identity and Access Management or (IAM), I
 
 innovation always moving
 
-## capital expense
-rent building
-buying hardware
-hiring security guards
-utilitie bills
+## Capital expense
+- Rent building
+- Buying hardware
+- Uiring security guards
+- Utilitie bills
 
 example xmas
 xmas service is peek time as oppose to janurary
@@ -224,6 +225,8 @@ xmas service is peek time as oppose to janurary
 cloud server peek time is always
 
 ### AWS EC2
+
+
 
 #### Common commands for AWS EC2
 scp or rsync
@@ -239,14 +242,17 @@ scp or rsync
 - choosing an OS - ubuntu 18.04LTS
 
 ##### process 
-search ec2,
-create instance
-select machine - ubuntu 18.04 LTS server
-Select tags eng114_...
-Select security rules 
+1. Search ec2,
+2. Create instance
+3. select machine - ubuntu 18.04 LTS server
+4. Select tags eng114_...
+5. Select security rules 
 - ec2 allows port 22 by default
 - nginx port 80
 - app port 3000
 
 ##### copy files from localhost to EC2
 `scp -i [key_file] -r [path to folder/file you want copied] [path to location you want file to go to]:~`
+
+###### AWS Network Diagram
+![AWS App and Database Diagram](./images/aws_diagram_pt2.jpg)
