@@ -7,7 +7,6 @@ sudo apt-get update -y
 sudo apt-get upgrade -y
 
 # apt key
-
 sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv D68FA50FEA312927
 
 # MongoDB source list

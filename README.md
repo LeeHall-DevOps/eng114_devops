@@ -256,3 +256,5 @@ scp or rsync
 
 ###### AWS Network Diagram
 ![AWS App and Database Diagram](./images/aws_diagram_pt2.jpg)
+
+![Two tier diagram](./images/aws_two_tier_diagram.jpg)
