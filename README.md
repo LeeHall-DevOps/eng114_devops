@@ -273,4 +273,4 @@ Takes a snap shot of the machine and it's data at that time
 ![EC2 to S3 diagram](./images/EC2_to_S3_diagram.jpg)
 
  - To copy a file from ec2 to aws s3
- `aws s3 cp text.txt s3://eng114-lee-bucket`
+ `aws s3 cp text.txt s3://my-bucket`
