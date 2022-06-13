@@ -268,7 +268,7 @@ Takes a snap shot of the machine and it's data at that time
 
 ### Commands for aws s3
 
-##### Ensure you have:
+
 
 ![EC2 to S3 diagram](./images/EC2_to_S3_diagram.jpg)
 
