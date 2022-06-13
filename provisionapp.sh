@@ -12,6 +12,8 @@ sudo apt-get install nginx -y
 # enable nginx
 sudo systemctl enable nginx
 
+scp -i "vm_test.pem" -r ../Desktop/eng114_devops_repo/app/ ec2-34-243-18-85.eu-west-1.compute.amazonaws.com:~
+
 # nginx status
 # sudo systemctl status nginx (debug tool)
 
@@ -26,7 +28,7 @@ printenv DB_HOST mongodb://192.168.10.150:27017/posts
 
 
 # download nodejs
-sudo curl -sL http://deb.nodesource.com/setup_6.x | sudo -E bash -
+sudo curl -sL http://deb.nodesource.com/setup_8.x | sudo -E bash -
 
 # install nodejs
 sudo apt-get install -y nodejs 
