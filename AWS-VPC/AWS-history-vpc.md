@@ -1,26 +1,26 @@
 # AWS History
-![AWS service map](../images/AWS-history-map.jpg)
+![AWS service map](../AWS-VPC/vpc-images/AWS-history-map.jpg)
 
 In 2012 cloud computing was a shared resource, meaning no data security against others sharing that cloud space.
 now in 2020 resources are no longer openly shared, and only the key holder can access the data and thoses the key holders permit.
 
 ## AWS VPC Architecture
-![AWS VPC Arch Diagram](../images/AWS-history-VPC-arch.jpg)
+![AWS VPC Arch Diagram](../AWS-VPC/vpc-images/AWS-history-VPC-arch.jpg)
 
 NACL works on a subnet level
 
 ## Step 1: Create a VPC in Ireland eu-west-1
 ---
-![Create VPC](../images/VPC-create.jpg)
+![Create VPC](../AWS-VPC/vpc-images/VPC-create.jpg)
 
 
 ## Step 2: Create Internet Gateway
 ---
-![Create IG](../images/Create-gateway.jpg)
+![Create IG](../AWS-VPC/vpc-images/Create-gateway.jpg)
 
 ### 2.1 attach the internet gateway with your VPC
 ---
-![Attach ig to vpc](../images/attach-Vpc%20to%20IG.jpg)
+![Attach ig to vpc](../AWS-VPC/vpc-images/attach-Vpc%20to%20IG.jpg)
 
 ### Step 3: Create a subnet/s - Associte subnet with your subnet with your VPC
 
