@@ -33,7 +33,7 @@ want to use - 10.0.1.0/24
 
 
 ## Planning App and DB VPC
-![vpc Diagram](./vpc-images//APP-DB-diagram.jpg
+![vpc Diagram](./vpc-images//APP-DB-diagram.jpg)
 
 
 
