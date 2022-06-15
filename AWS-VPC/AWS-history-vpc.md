@@ -30,6 +30,13 @@ NACL works on a subnet level
 cidr Block - 10.0.0.0/16
 want to use - 10.0.1.0/24
 
+
+
+## Planning App and DB VPC
+![vpc Diagram](./vpc-images//APP-DB-diagram.jpg
+
+
+
 Lee cidr block - 10.0.7.0/25
 
 
