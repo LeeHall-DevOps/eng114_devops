@@ -72,6 +72,9 @@ Most data breach happen between localhost and github while ssh from localhost
 
 ## Planning
 ---
+
+![planning diagram](./CICD%20-%20images/pipe-line-planning-diagram.jpg)
+
 - Generate SSH key on localhost in .SSH/
 - coyp 114.pem key to our Github
 - Test the ssh connection 
@@ -98,3 +101,6 @@ Most data breach happen between localhost and github while ssh from localhost
 ![select SSH](./CICD%20-%20images/step-10-ssh-and-gpg-keys.jpg)
 
 11. Select new ssh
+
+![new ssh](./CICD%20-%20images/step-11-new-ssh.jpg)
+
