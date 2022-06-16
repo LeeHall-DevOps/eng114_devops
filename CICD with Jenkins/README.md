@@ -63,4 +63,25 @@ five times a day or Once a year?
 - Project size?
 
 
+## Data breaches
+---
+
+Most data breach happen between localhost and github while ssh from localhost
+![data breach](./CICD%20-%20images/data-breach.jpg)
+
+## Planning
+---
+- Generate SSH key on localhost in .SSH/
+- coyp 114.pem key to our Github
+- Test the ssh connection 
+
+## Actions
+1. go to ./ssh folder
+2. Type command `ssh-keygen -t rsa -b 4096 -C "your_email@example.com"` 
+3. Enter a name for file
+4. Press enter Twice
+5. Then enter `cat ./[filename].pub`
+6. copy all the key
+7. go to https://github.com/LeeHall-DevOps/eng114_devops
+8. Press
 
