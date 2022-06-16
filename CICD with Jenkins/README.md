@@ -40,8 +40,6 @@ What is a CI CD Pipeline: The CI/CD pipeline is all about automation: Initiating
 ---
 Why Jenkins? Multi Billion Dollar companies like Facebook, Netflix and Ebay have adopted Jenkins because of it’s amazing advantages, Jenkins is an open-source automation server in which the central build and CI process take place, It is a Java-based program with packages for Windows, macOS, & Linux.
 
-![Jenkins pipeline](./CICD%20-%20images/Jenkins-pipeline.jpg)
-
 
 ### Docker
 ---
@@ -76,6 +74,7 @@ Most data breach happen between localhost and github while ssh from localhost
 - Test the ssh connection 
 
 ## Actions
+---
 1. go to ./ssh folder
 2. Type command `ssh-keygen -t rsa -b 4096 -C "your_email@example.com"` 
 3. Enter a name for file
@@ -83,5 +82,16 @@ Most data breach happen between localhost and github while ssh from localhost
 5. Then enter `cat ./[filename].pub`
 6. copy all the key
 7. go to https://github.com/LeeHall-DevOps/eng114_devops
-8. Press
+8. Press profile picture in top-right corner as shown
 
+![profile picture](./CICD%20-%20images/Instruction-8-profile.jpg)
+
+9. Select "settings" as shown
+
+![Select settings](./CICD%20-%20images/Step-9-settings.jpg)
+
+10. Select "SSH and GPG Keys" as shown below
+
+![select SSH](./CICD%20-%20images/step-10-ssh-and-gpg-keys.jpg)
+
+11. Select new ssh
