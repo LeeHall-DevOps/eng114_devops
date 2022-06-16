@@ -8,6 +8,7 @@ Developers merge/commit code to master branch multiple times a day, fully automa
 ### Continuous Delivery ( CD )
 ---
 Continuous Delivery is an extension of continuous integration to make sure that you can release new changes to your customers quickly in a sustainable way. This means that on top of having automated your testing, you also have automated your release process and you can deploy your application at any point of time by clicking on a button. In continuous Delivery the deployment is completed manually.
+
 ![continuous Delivery](./CICD%20-%20images/CICD-pipeline)
 
 ### Continuous Deployment
@@ -27,6 +28,7 @@ Continuous Deployment is more advanced than Continuous Delivery, because it auto
 Jenkins is a software that allows continuous integration. Jenkins will be installed on a server where the central build will take place. The following flowchart demonstrates a very simple workflow of how Jenkins works. Along with Jenkins, sometimes, one might also see the association of Hudson.
 
 ![Jenkins pipeline](./CICD%20-%20images/Jenkins-pipeline.jpg)
+
 ## What are the benefits of CICD pipeline
 ---
 What is a CI CD Pipeline: The CI/CD pipeline is all about automation: Initiating code builds, automated testing, and automated deploying to the staging or production environments. It’s complex and exciting at the same time, but incredibly fast, if the output of any stage fails, the next stage will also fail.
