@@ -122,6 +122,45 @@ Step 2. copy and paste URL
 
 ![jenkins-url](./Jenkins%20images/jenkins-step-2.jpg)
 
-Step 3. In githubs settings, select webhooks then paste the Jenkins URL into Payload URL
+Step 3. In githubs settings, select webhooks then paste the Jenkins URL into Payload URL. add webhook to URL, check the "JUST THE PUSH EVENT" radio button and check the "ACTIVE" CHECKBOX then Press Add webhook
 
-Can you see me
+![payload url](./Jenkins%20images/Jenkins%20payload%20url.jpg)
+
+Step 4. Return to your Jenkins server, Press New Item
+
+![New Item](./Jenkins%20images/Jenkins-new-items.jpg)
+
+Step 5. Give you Item a name, Select "Freestyle project", Press OK
+
+![naming item](./Jenkins%20images/New-Item-name.jpg)
+
+Step 6. 
+- Give a relevent "Description"
+- Tick "GITHUB PROJECT"
+
+- Input "GitHub URL"
+
+![github project](./Jenkins%20images/github-project-url.jpg)
+
+
+- In "OFFICE 365 CONNECTOR"
+
+![Office-365-connector](./Jenkins%20images/set-up-Office-365-connector.jpg)
+
+- In "Source Code Management"
+
+![Source-code-management](./Jenkins%20images/set-up-Source-Code-Management.jpg)
+
+- In "Build Triggers"
+![Build trigger](./Jenkins%20images/set-up-Build-triggers.jpg)
+
+- In "Build Environment"
+![Build Environment](./Jenkins%20images/set-up-build-Environment.jpg)
+
+- In "Build"
+![Build](./Jenkins%20images/set-up-build.jpg)
+
+- In "Post-Build Actions"
+![Post-Build Actions](./Jenkins%20images/set-up-post-build-actions.jpg)
+
+- Press "save"

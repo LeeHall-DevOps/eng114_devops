@@ -1,4 +1,3 @@
-working
 # What is DevOps
 DevOps is the merging of the development team and the operations team, this merging prevents each team from blaming the the other. 
 DevOps come is of a open culture that promotes resposibilie, trust and respect. DevOps increase the productivity in the workplace by automating continuous development and intergration.
