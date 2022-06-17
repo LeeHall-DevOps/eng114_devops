@@ -116,8 +116,10 @@ resource: https://docs.github.com/en/github-ae@latest/developers/webhooks-and-ev
 test
 
 Step 1. go to Jenkins account: http://3.10.171.242:8080/job/lee-CI/GitHubPollLog/
-![Jenkins step 1](./CICD%20-%20images/Jenkins-Step-1.jpg)
+![Jenkins step 1](./Jenkins%20images/Jenkins-Step-1.jpg)
 
 Step 2. copy and paste URL 
 
-![jenkins-url](./CICD%20-%20images/jenkins-step-2.jpg)
+![jenkins-url](./Jenkins%20images/jenkins-step-2.jpg)
+
+Step 3. In githubs settings, select webhooks then paste the Jenkins URL into Payload URL
