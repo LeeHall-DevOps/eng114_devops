@@ -115,7 +115,9 @@ This eliminates the need for constant checking to be done by the subject. Webhoo
 resource: https://docs.github.com/en/github-ae@latest/developers/webhooks-and-events/webhooks/creating-webhooks
 test
 
+
 Step 1. go to Jenkins account: http://3.10.171.242:8080/job/lee-CI/GitHubPollLog/
+
 ![Jenkins step 1](./Jenkins%20images/Jenkins-Step-1.jpg)
 
 Step 2. copy and paste URL 
@@ -152,15 +154,19 @@ Step 6.
 ![Source-code-management](./Jenkins%20images/set-up-Source-Code-Management.jpg)
 
 - In "Build Triggers"
+
 ![Build trigger](./Jenkins%20images/set-up-Build-triggers.jpg)
 
 - In "Build Environment"
+
 ![Build Environment](./Jenkins%20images/set-up-build-Environment.jpg)
 
 - In "Build"
+
 ![Build](./Jenkins%20images/set-up-build.jpg)
 
 - In "Post-Build Actions"
+
 ![Post-Build Actions](./Jenkins%20images/set-up-post-build-actions.jpg)
 
 - Press "save"
