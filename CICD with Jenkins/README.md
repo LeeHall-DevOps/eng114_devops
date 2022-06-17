@@ -104,7 +104,8 @@ Most data breach happen between localhost and github while ssh from localhost
 
 ![new ssh](./CICD%20-%20images/step-11-new-ssh.jpg)
 
-bob
+
+
 
 ## What is webhook?
 Webhooks allow interaction between web-based applications through the use of custom callbacks. The use of webhooks allows web applications to automatically communicate with other web-apps. Unlike traditional systems where one system (subject) keeps polling another system (observer) for some data, Webhooks allow the observer to push data into the subject’s system automatically whenever some event occurs. 
@@ -113,3 +114,10 @@ This eliminates the need for constant checking to be done by the subject. Webhoo
 
 resource: https://docs.github.com/en/github-ae@latest/developers/webhooks-and-events/webhooks/creating-webhooks
 test
+
+Step 1. go to Jenkins account: http://3.10.171.242:8080/job/lee-CI/GitHubPollLog/
+![Jenkins step 1](./CICD%20-%20images/Jenkins-Step-1.jpg)
+
+Step 2. copy and paste URL 
+
+![jenkins-url](./CICD%20-%20images/jenkins-step-2.jpg)
