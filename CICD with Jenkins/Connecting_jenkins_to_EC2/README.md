@@ -36,3 +36,5 @@
 - Add name of new Item/build (eng114-lee-Jenkins-aws), tick `Trigger only if build is stable`
 
 ![Post build actions in lee-CI](./CJTE_Images/Post-build-actions%20in%20lee-CI.jpg)
+
+### Ensure to check all file paths properly and IP addresses match before pushing to github
