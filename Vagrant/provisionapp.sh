@@ -14,6 +14,8 @@ sudo systemctl enable nginx
 
 scp -i "vm_test.pem" -r ../Desktop/eng114_devops_repo/app/ ec2-34-243-18-85.eu-west-1.compute.amazonaws.com:~
 
+scp -i -r ../Desktop/eng114_devops_repo/app/ vagrant@192.168.33.10:~
+ vagrant scp <some_local_file_or_dir> <vm_name>:<some_path_on_vm>
 # nginx status
 # sudo systemctl status nginx (debug tool)
 

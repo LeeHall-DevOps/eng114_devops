@@ -38,6 +38,11 @@
 - test controller connections by entering command below
 `vagrant@controller:/etc/ansible$ ansible web -m ping`
 
+- From controller machine ssh into another machine:
+"For WEB" - `ssh vagrant@192.168.33.10`
+"For DB" - `ssh vagrant@192.168.33.11`
+"For EXAMPLE" `ssh vagrant@exa.mp.le.IP`
+
 ## Ansible ad-hoc commands
 
 - Tell you the details of choosen machine
