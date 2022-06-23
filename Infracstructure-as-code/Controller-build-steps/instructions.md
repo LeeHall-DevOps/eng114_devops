@@ -70,8 +70,18 @@ Find ad-hoc command to send file
 
 ![Nginx playbook](./Controller-steps-images/nginx-playbook.jpg)
 
-
 - run yml program
 Type `ansible-playbook nginx-playbook.yml`
 
+### debugging command
+In web machine
 
+- sudo npm start
+- sudo npm i 
+- sudo rm -rf node_modules/
+- sudo npm install -g npm@lastest
+- sudo n stable
+- sudo npm install -g n
+- ps aux
+- sudo npm clean -f
+-  npm cache clean -g n
