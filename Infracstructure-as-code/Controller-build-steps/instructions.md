@@ -84,4 +84,4 @@ In web machine
 - sudo npm install -g n
 - ps aux
 - sudo npm clean -f
--  npm cache clean -g n
+- npm cache clean -g n
