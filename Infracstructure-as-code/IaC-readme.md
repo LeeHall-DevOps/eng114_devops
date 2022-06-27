@@ -88,3 +88,16 @@ IaC delivers an integrated, end-to-end security solution to help organizations b
 ## Planning Ansible controller to build AWS EC2 for app and database
 
 ![Ansible controller design](./hybrid/hybrid-images/my-ansible-design.jpg)
+
+- To ping a node 
+`sudo ansible web-app -m ping`
+
+- run a playbook
+`sudo ansiable-playbook [playbook-name].yml
+
+- To debug type
+`-vvvv` at the end of code
+
+- To check for syntax-check
+--syntax-check
+
