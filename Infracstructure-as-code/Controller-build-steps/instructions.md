@@ -35,12 +35,14 @@
 ### 8. Enter [web], web machine IP followed by
 ---
 [web]
-'192.168.33.10 ansible_connection=ssh ansible_ssh_user=vagrant ansible_ssh_pass=vagrant`
+`192.168.33.10 ansible_connection=ssh ansible_ssh_user=vagrant ansible_ssh_pass=vagrant`
+
 
 ### 9. Do the same for the DB machine
 ---
 [db]
-'192.168.33.11 ansible_connection=ssh ansible_ssh_user=vagrant ansible_ssh_pass=vagrant`
+`192.168.33.11 ansible_connection=ssh ansible_ssh_user=vagrant ansible_ssh_pass=vagrant`
+
 
 ### 11. Ensure the controller is linked to both machines using:
 ---
@@ -48,44 +50,51 @@
 
 ### 12. To enter the web machine:
 --- 
-`ssh vagrant@192.168.33.10` for WEB machine
+- `ssh vagrant@192.168.33.10` for WEB machine
 or
-`ssh vagrant@192.168.33.11` for DB machine
+- `ssh vagrant@192.168.33.11` for DB machine
 
 ### 13. Create a playbook.yml:
 ---
-`Sudo nano name-playbook.yml`
+-`Sudo nano name-playbook.yml`
+
 
 ### 14(a). choose a host – web or DB
-	Hosts: web
+---
+- `Hosts: web`
 	
+
 ### 14(b). Do I need details about the server?  Yes or no
 ---
-`Gather_facts: yes`
--	
+- `Gather_facts: yes`
+
+
 ### 14(c). Do I need sudo access? True or false
 ---
-`Become: true`
--	
+- `Become: true`
+
 ### 14(d). What tasks do I want the playbook to do? Install/add
 ---
-`Tasks:`
-`Name: Install Nginx Web Server`
-`Apt: pkg=nginx state=present`
+- `Tasks:`
+- `Name: Install Nginx Web Server`
+- `Apt: pkg=nginx state=present`
 
 ### 15. Run playbook using Ansible:
 ---
-`ansible-playbook Nginx-playbook.yml`
+- `ansible-playbook Nginx-playbook.yml`
 
 ### 16.	Check web machine IP in the browser
 ---
 test controller connections by entering command below
-`vagrant@controller:/etc/ansible$ ansible web -m ping`
+
+- `vagrant@controller:/etc/ansible$ ansible web -m ping`
 
 ### 17. From controller machine ssh into another machine:
-"For WEB" - `ssh vagrant@192.168.33.10`
-"For DB" - `ssh vagrant@192.168.33.11`
-"For EXAMPLE" `ssh vagrant@exa.mp.le.IP`
+- "For WEB" - `ssh vagrant@192.168.33.10`
+
+- "For DB" - `ssh vagrant@192.168.33.11`
+
+- "For EXAMPLE" `ssh vagrant@exa.mp.le.IP`
 
 ## Ansible ad-hoc commands
 
