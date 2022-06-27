@@ -9,7 +9,7 @@
     key_name: eng114
     region: eu-west-1
     image: ami-07b63aa1cfd3bc3a5 # https://cloud-images.ubuntu.com/locator/ec2/
-    id: "eng114-lee-pain2"
+    id: "eng114-lee-Ansible-controller2"
     sec_group: "{{ id }}-sec"
 
   tasks:
@@ -68,7 +68,7 @@
         ec2:
           aws_access_key: "{{aws_access_key}}"
           aws_secret_key: "{{aws_secret_key}}"
-          key_name: shazid-jenkins-server
+          key_name: eng114_group
           id: "{{ id }}"
           group_id: "{{ result_sec_group.group_id }}"
           image: "{{ image }}"
@@ -80,8 +80,6 @@
           # count_tag:
           #   Name: App
           instance_tags:
-            Name: eng114_lee_playbook_app
+            Name: eng114_lee_playbook_controller
 
-      tags: ['never', 'ec2-instance']
-    - name: Install Nginx Web server
-      apt: pkg=nginx state=present update_cache=yes
+      tags: ['never', 'ec2-controller']

@@ -101,3 +101,5 @@ IaC delivers an integrated, end-to-end security solution to help organizations b
 - To check for syntax-check
 --syntax-check
 
+- ping web machine
+` sudo ansible web -m ping --ask-vault-pass`
