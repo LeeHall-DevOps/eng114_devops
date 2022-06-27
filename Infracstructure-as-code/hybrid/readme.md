@@ -24,3 +24,8 @@ sudo ansible-vault create pass.yml
 aws_access_key: _
 aws_secret_key: _
 cat pass.yml
+
+access_ec2_instanst sudo ansible-playbook app_ec2_instance.yml --ask-vault-pass --tags ec2-instance
+
+Run playbook instance using
+ansible-vault [playbook-name] --ask-vault-pass --tags [tag-name]

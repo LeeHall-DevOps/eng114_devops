@@ -4,11 +4,12 @@
 - hosts: localhost
   connection: local
   gather_facts: False
+
   vars:
-    key_name: shazid-jenkins-server
+    key_name: eng114
     region: eu-west-1
     image: ami-07b63aa1cfd3bc3a5 # https://cloud-images.ubuntu.com/locator/ec2/
-    id: "eng114-lee-ansible-instance3"
+    id: "eng114-lee-pain2"
     sec_group: "{{ id }}-sec"
 
   tasks:
@@ -20,13 +21,13 @@
         ec2_instance_facts:
           aws_access_key: "{{aws_access_key}}"
           aws_secret_key: "{{aws_secret_key}}"
-          region: "eu-west-1"
+          region: "{{ region }}"
         register: result
 
       - name: Instances ID
-          debug:
-            msg: "ID: {{ item.instance_id }} - State: {{ item.state.name }} - Public DNS: {{ item.public_dns_name }}"
-          loop: "{{ result.instances }}"
+        debug:
+          msg: "ID: {{ item.instance_id }} - State: {{ item.state.name }} - Public DNS: {{ item.public_dns_name }}"
+        loop: "{{ result.instances }}"
 
       tags: always
 
@@ -36,9 +37,9 @@
 
       - name: Upload public key to AWS
         ec2_key:
-          name: "eng114"
-          key_material: "{{ lookup('file', '/home/vagrant/.ssh/eng114.pub') }}"
-          region: "eu-west-1"
+          name: "{{ key_name }}"
+          key_material: "{{ lookup('file', '/home/vagrant/.ssh/{{ key_name }}.pub') }}"
+          region: "{{ region }}"
           aws_access_key: "{{aws_access_key}}"
           aws_secret_key: "{{aws_secret_key}}"
 
@@ -46,23 +47,28 @@
         ec2_group:
           name: "{{ sec_group }}"
           description: "Sec group for app {{ id }}"
-          #vpc_id: vpc-0f54ebc60211c08bc
-          region: "eu-west-1"
+          # vpc_id: 12345
+          region: "{{ region }}"
           aws_access_key: "{{aws_access_key}}"
           aws_secret_key: "{{aws_secret_key}}"
           rules:
-            - proto: tcp
-              ports:
-                - 22
-              cidr_ip: 0.0.0.0/0
-              rule_desc: allow all on ssh port
+          - proto: tcp
+            ports:
+              - 22
+            cidr_ip: 0.0.0.0/0
+            rule_desc: allow all on ssh port
+          - proto: tcp
+            ports:
+              - 80
+            cidr_ip: 0.0.0.0/0
+            rule_desc: allow nginx to work
         register: result_sec_group
 
-      - name: Provision instance
+      - name: Provision instance(s)
         ec2:
           aws_access_key: "{{aws_access_key}}"
           aws_secret_key: "{{aws_secret_key}}"
-          key_name: "{{ key_name }}"
+          key_name: shazid-jenkins-server
           id: "{{ id }}"
           group_id: "{{ result_sec_group.group_id }}"
           image: "{{ image }}"
@@ -74,6 +80,8 @@
           # count_tag:
           #   Name: App
           instance_tags:
-            Name: "lee-ansible-instance"
+            Name: eng114_lee_playbook_app
 
-      tags: ['never', 'create_ec2']
+      tags: ['never', 'ec2-instance']
+    - name: Install Nginx Web server
+      apt: pkg=nginx state=present update_cache=yes

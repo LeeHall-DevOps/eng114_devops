@@ -1,0 +1,24 @@
+sudo nano provision.sh file
+#!/bin/bash
+
+#update
+sudo apt-get update -y
+
+#install nginx
+sudo apt-get 
+
+#start nginx
+sudo systemctl start nginx
+
+#enable nginx
+sudo systemctl 
+
+provision.sh
+
+check list permissions 'll'
+
+change permission `chmod
+-----------------------------------
+
+what questions should be 
+

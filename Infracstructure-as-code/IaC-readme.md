@@ -84,3 +84,7 @@ and executed repeatedly to stand up the infrastructure on multiple deployment ti
 ## How does IaC benefit the business? 
 
 IaC delivers an integrated, end-to-end security solution to help organizations better protect their cloud environments. It provides a complete picture of cyber risks across the modern attack surface, with unified visibility into code, configurations, assets and workloads. Learn more about Tenable.cs and how our platform enables DevSecOps with integrated controls for development and runtime workflows, focused on IaC.
+
+## Planning Ansible controller to build AWS EC2 for app and database
+
+![Ansible controller design](./hybrid/hybrid-images/my-ansible-design.jpg)
