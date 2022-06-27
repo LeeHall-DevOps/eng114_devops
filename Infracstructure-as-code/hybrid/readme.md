@@ -19,16 +19,16 @@ type info
 
 - go to 
 
-`cd /etc/ansible/group_vars/all`
+- `cd /etc/ansible/group_vars/all`
 
-`sudo nano pass.yml`
+- `sudo nano pass.yml`
 
-`sudo ansible-vault create pass.yml`
+- `sudo ansible-vault create pass.yml`
 
 aws_access_key: _
 aws_secret_key: _
 
-cat pass.yml
+- `cat pass.yml`
 
 access_ec2_instanst `sudo ansible-playbook app_ec2_instance.yml --ask-vault-pass --tags ec2-instance`
 
