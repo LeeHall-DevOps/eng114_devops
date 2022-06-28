@@ -1,0 +1,16 @@
+# test-svc.yml
+- hosts: all
+  become: yes
+  gather_facts: yes
+  tasks:
+  - name: "Populate service facts"
+    service_facts:
+  - name: "Check the service nginx facts as they are"
+    debug:
+      msg: "{{ansible_facts.services['nginx.service'].state}}"
+  - name: "Verify if nginx is running!"
+    assert:
+      that:
+        - "'{{ansible_facts.services['nginx.service'].state}}' == 'running'"
+      fail_msg: "nginx is down, please check nginx status or restart!"
+      success_msg: "no issues, service is running as expected"

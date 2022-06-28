@@ -1,0 +1,31 @@
+---
+- name: tests # 
+  hosts: all # checking tests in all the hosts available
+  become: yes  # or sudo allows access
+  gather_facts: no
+  tasks:
+    - name: store data output for timezone check
+      command: date
+      register: check_tz
+    
+
+    # if (tz) or time zone is 'UTC', meaning europe. return output
+    - name: check tz
+      assert:
+        that: "'UTC' in check_tz.stdout"
+    
+    - name: "Check if NGINX is installed"
+      package_facts:
+       manager: "auto"
+    
+    - name: confirm nginx is installed
+      assert:
+        that: "'nginx' in ansible_facts.packages"
+    
+    - name: Check if port 80 is listening
+      shell: lsof -i -p -n | grep LISTEN
+      register: port_check
+
+    - name: confirm port 80 is listening
+      assert:
+        that: "'*:80 (LISTEN)' in port_check.stdout"
