@@ -1,0 +1,16 @@
+# Mongo playbook.yml
+---
+- name: Mongodb_tests
+  hosts: aws_db
+  become: yes
+  gather_facts: yes
+  tasks:
+    - name: Install mongodb
+      apt:
+        pkg: mongodb
+        state: present
+    
+    - name: Start mongodb
+      service:
+        name: mongodb
+        state: started
