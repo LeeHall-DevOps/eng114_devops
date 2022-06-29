@@ -50,10 +50,12 @@
 
 ## What is your biggest strength
 ---
-1. Communication
+- 1. Communication
+
 "I feel one of my biggest strengths is my ability to communicate with people from all walks of life, due to my wide range of life experiences, both professionally and in my personal life. I am able to explain concepts in a technical and non-technical ways."
 
-2. Patience
+- 2. Patience
+
 "I feel one of my biggest strengths is my ability to be patient when faced with blockers when completeing tasks"
 
 ## Where do you see your self in:
