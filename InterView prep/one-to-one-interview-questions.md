@@ -32,7 +32,7 @@
 - Virtual machines using Vagrant and Virtual box
 - Jenkins - Webhooks, testing, how Jenkins is used in CI/CD/CDE
 - Amazon Web Services including: Instances, networking, Auto-scaling, Virtual Private Clouds 
-- Ansible - Creating, modifing and testing aws instances 
+- Ansible - Creating, modifing and testing aws instances using YML format 
 
 ## Why do you want to work for Sparta?
 ---
