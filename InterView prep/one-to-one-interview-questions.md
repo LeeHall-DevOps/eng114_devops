@@ -43,10 +43,10 @@
 
 ## What is your biggest weakness?
 ---
-(S) "My biggest weakness was that I used to over think Tasks given"
-(T) "My Task was to create Ansible tests using YML format"
-(A) "To over come my weakness I broke down the task into simplier more manageable tasks"
-(R) "By breaking the into smaller tasks I managed to complete them one by one with out feeling overwhelmed"
+- (S) "My biggest weakness was that I used to over think Tasks given"
+- (T) "My Task was to create Ansible tests using YML format"
+- (A) "To over come my weakness I broke down the task into simplier more manageable tasks"
+- (R) "By breaking the into smaller tasks I managed to complete them one by one with out feeling overwhelmed"
 
 ## What is your biggest strength
 ---
