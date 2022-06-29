@@ -61,10 +61,11 @@
 ## Where do you see your self in:
 
 ### Short term - present - 6 months
-"In the short term I want to Graduate from my Sparta Training, and settle into my junior DevOps Consultant role at the home office"
+"For my short term goals, I want to Graduate from my Sparta Training, and settle into my junior DevOps Consultant role at the home office."
 
 ### mid-term - 6 months - 2 years
-"In the mid-term I would like to gain as much experience in the home office"
+"for my mid-term goals, I want to gain more technical experience and a deeper understanding of how DevOps can and will be used in the home office and how I will contribute to the Home Offices goals,  when I join them in 18 months as a DevOps consultant."
 
 
 ### long-term - 2 years - 5 years
+"For my long term goals, I want to progress in my career path by either leading a team of junior DevOps consultants or be in a position of senior DevOps engineer to guide the teams I will work with in achieving the Organizations goals for the future."
