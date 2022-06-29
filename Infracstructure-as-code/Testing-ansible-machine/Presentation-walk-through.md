@@ -1,7 +1,7 @@
 # Presentation prep
 
 ## Create a diagram
-![Ansible architecture diagram](./Prep_images/Ansible-architect-diagram.jpg)
+![Ansible architecture diagram](./Prep_images/Ansible-server-drift-diagram-demo.jpg)
 
 ## Step by step
 
