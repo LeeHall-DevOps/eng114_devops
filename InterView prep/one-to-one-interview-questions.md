@@ -14,6 +14,9 @@
 ---
 "I've always been passionate about learning IT, that passion drove me to join Codecadmy coding courses and LinkedIn learning."
 
+###### Hobbies/Interest
+---
+"In my spare time, I enjoy swimming, reading and building and upgrading my PC"
 
 ## What is DevOps
 ---
@@ -36,7 +39,7 @@
 
 ## Why do you want to work for Sparta?
 ---
-"I was attacted to Sparta Global, after hearing about there high standards of training, there focus to equality, there dedication to staff and client welfare. these are some of the facts that impressed and made me want to join such an amazing organisation"
+"I was attacted to Sparta Global, after hearing and researching about there high standards of training, there focus to equality, there dedication to staff and client welfare. these are some of the facts that impressed and made me want to join such an amazing organisation"
 
 ## Why do you want to work for the Home Office?
 ---
