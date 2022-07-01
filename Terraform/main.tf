@@ -1,113 +1,143 @@
 
-# the service and location
+# launch a server on aws
+
+# who is the cloud provider AWS
 provider "aws" {
-        region = "eu-west-1"
-}
 
-# create a VPC
-resource "aws_vpc" "eng114_Lee_tf_vpc" {
-  
-  cidr_block       = "10.80.0.0/16"
+# where do you want to create resources eu-west-1
+  region = "eu-west-1"
+}
+################################# VPC
+resource "aws_vpc" "vpc" {
+  cidr_block = var.vpc_cidr
   instance_tenancy = "default"
+
   tags = {
-      Name = "eng114_Lee_tf_vpc"
+    Name        = "${var.infra_env}-vpc"
+    Environment = var.infra_env
   }
 }
 
-# create a internet gateway
+################################# PUBLIC SUBNET
+resource "aws_subnet" "public" {
+  for_each = var.public_subnet_numbers
 
-resource "aws_internet_gateway" "eng114_Lee_tf_ig" {
-  vpc_id = aws_vpc.eng114_Lee_tf_vpc.id
+  vpc_id = aws_vpc.vpc.id
+
+  // 10.80.0.0/16
+  cidr_block = cidrsubnet(aws_vpc.vpc.cidr_block, 4, each.value)
+
   tags = {
-    Name = "eng114_Lee_tf_ig"
+    Name = "${var.infra_env}-public-subnet"
+    Environment = var.infra_env
+    Subnet = "${each.key}-${each.value}"
   }
 }
 
-# create a public and a private subnets
+################################# PRIVATE SUBNET
+resource "aws_subnet" "private" {
+  for_each = var.private_subnet_numbers
 
-resource "aws_subnet" "eng114_Lee_tf_public_subnet" {
-  vpc_id     = aws_vpc.eng114_Lee_tf_vpc.id
-  cidr_block = "10.80.1.0/24"
-  map_public_ip_on_launch = true
-  availability_zone = "eu-west-1a"
+  vpc_id = aws_vpc.vpc.id
 
+  // 10.80.0.0/16 
+  cidr_block = cidrsubnet(aws_vpc.vpc.cidr_block, 4, each.value)
+  
   tags = {
-    Name = "eng114_Lee_tf_public_subnet"
+    Name = "${var.infra_env}-private-subnet"
+    Environment = var.infra_env
+    Subnet = "${each.key}-${each.value}"
   }
 }
 
-resource "aws_subnet" "eng114_Lee_tf_private_subnet" {
-  vpc_id     = aws_vpc.eng114_Lee_tf_vpc.id
-  cidr_block = "10.80.10.0/24"
-  map_public_ip_on_launch = true
-  availability_zone = "eu-west-1a"
+################################# INTERNET GATEWAY
+resource "aws_internet_gateway" "ig" {
+  vpc_id = aws_vpc.vpc.id
 
   tags = {
-    Name = "eng114_Lee_tf_private_subnet"
+    Name = "${var.infra_env}-igw"
   }
 }
 
-# app security group
+################################# ROUTE TABLE
+resource "aws_route_table" "public-route-table" {
+  vpc_id = aws_vpc.vpc.id
 
-resource "aws_security_group" "app_security_group" {
-  name        = "app-security_group"
+  tags = {
+    Name = "${var.infra_env}-route-table" 
+  }
+}
+
+################################# ROUTE FROM (PUBLIC)
+resource "aws_route" "public_internet_gateway" {
+  route_table_id = aws_route_table.public-route-table.id
+  destination_cidr_block = "0.0.0.0/0"
+  gateway_id = aws_internet_gateway.ig.id
+}
+
+resource "aws_route_table_association" "public" {
+  route_table_id = aws_route_table.public-route-table.id
+  subnet_id = aws_subnet.public["eu-west-1a"].id
+}
+
+resource "aws_security_group" "allow_nginx" {
+  name = "allow_nginx"
   description = "Allow port 80"
-  vpc_id      = aws_vpc.eng114_Lee_tf_vpc.id
+  vpc_id = aws_vpc.vpc.id
 
   ingress {
-   from_port   = 22
-   to_port     = 22 
-   protocol    = "tcp"
-   cidr_blocks = ["${chomp(data.http.myip.body)}/32"]
- }
-
-# All Traffic inbound
-  ingress {
-   from_port   = 80
-   to_port     = 80
-   protocol    = "tcp"
-   cidr_blocks = ["0.0.0.0/0"]
- }
-
- ingress {
-   from_port   = 3000
-   to_port     = 3000
-   protocol    = "tcp"
-   cidr_blocks = ["0.0.0.0/0"]
+    from_port = 80
+    protocol  = "tcp"
+    to_port   = 80
+    cidr_blocks = [aws_vpc.vpc.cidr_block]
   }
-
- tags = {
-    Name = "eng114_Lee_tf_app_sg"
-  }
-
-# All Traffic outbound
-  egress = [ {
-    description = "Port out for 27017"
-    from_port = 27017
-    ipv6_cidr_blocks = [ "0.0.0.0/0" ]
-    protocol = "-1"
-    to_port = 27017
-  } ]
 
   egress {
-    from_port       = 0
-    to_port         = 0
-    protocol        = "-1"
-    cidr_blocks     = ["0.0.0.0/0"]
+    from_port = 0
+    protocol  = "-1"
+    to_port   = 0
+    cidr_blocks = ["0.0.0.0/0"]
+  }
+
+  tags = {
+    Name = "allow_nginx"
   }
 }
 
-resource "aws_instance" "app_instance"{
-# choose your ami and instance type
-        ami = "ami-0b47105e3d7fc023e"
-        instance_type = "t2.micro"
-    subnet_id = "${aws_subnet.eng114_Lee_tf_public_subnet.id}"
+# what type server - ubuntu 18.04 LTS ami
+resource "aws_instance" "app_instance" {
 
-# enable a public ip
+    # size of the server - t2.micro
+    ami = "ami-078ec35f07d5b1ae8"
+    instance_type = "t2.micro"
+    key_name = "eng114_group"
+    # do we need it to have a public access
     associate_public_ip_address = true
-
-# name the instance
+    # These two automatically go to default settings
+    # subnet_id = only use if you want to use customs or one you made 
+    # vpc_security_group_ids = only use if you want to use customs or one you made
+    
+    # what do we want to name it
     tags = {
-        Name = "eng114_Lee_tf"
+        Name = "eng114_lee_terraform_app"   
+    }
+}
+
+# what type server - ubuntu 18.04 LTS ami
+resource "aws_instance" "db_instance" {
+
+    # size of the server - t2.micro
+    ami = "ami-0dfc8089308f58519"
+    instance_type = "t2.micro"
+    key_name = "eng114_group"
+    # do we need it to have a public access
+    associate_public_ip_address = false
+    # These two automatically go to default settings
+    # subnet_id = only use if you want to use customs or one you made 
+    # vpc_security_group_ids = only use if you want to use customs or one you made
+    
+    # what do we want to name it
+    tags = {
+        Name = "eng114_lee_terraform_db"   
     }
 }
