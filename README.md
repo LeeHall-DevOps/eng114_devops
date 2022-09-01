@@ -99,10 +99,6 @@ location allows you to provide access to other applications on the same server. 
 
 proxy_pass passes the url through to a HTTP server
 
-
-
-
-
 ## What is Cloud computing with AWS?
 
 ### AWS Global
@@ -112,123 +108,9 @@ role of region
 make sure to deploy in the right location for client
 
 
-
 azs = multi availiblity zones
 we need at least two availibility zones, reason being if zone_one goes off line. the data is diverted to zone_two. until zone_one is fixed
 
-### buzz word
-- highly available 
-- scaliable
-
-## What are the benefits?
-![aws benefits image](./images/aws_benefits.jpg)
-
-
-## How does it fit into DevOps?
-Information resource [aws.amazon.com/devops/](https://aws.amazon.com/devops/)
-
-- Get started Fast
-Providing you have an Aws account, you can use any AWS service without any setup or installation.
-
-- Fully managed services
-AWS manages all the software and hardware, this leaves the dev to focus on the project
-
-- Built for scalabilitie
-Aws services are built to scale up or down as needed with no time delay in the service.
-
-- Programmable
-AWS gives the account holder the option to use the services command lind, API or SDKs to model and provision AWS resources.
-
-- Automation
-AWS assists in automation so you can build quicker and more effiently. with AWS you can automate manual tasks or processes like.
-1. Deployment
-2. Test work flow
-3. Container management
-4. configuration management
-
-- Secure
-AWS has data security in place called Identity and Access Management or (IAM), IAM sets the user permission which gives the account holder control over who can access it. 
-
-
-## Data centre video and notes
-![Video image](./images/aws_inside_data_centre.jpg)
-[Inside a Google data center](https://www.youtube.com/watch?v=XZmGGAbHqa0)
-
-- A giant building with lots of machines
-- south carolina one node
-- Operational and online twenty-four hours a day, seven days a week 
-- Record of 3,000,000 man hours without default at time of recording 
-
-### Security info 
-
-1. ID badges checked at gate
-2.  once in building personal go through rotating security corridor, then ID and retina checked. 
-3. room temp 80f
-4. custom server rack
-5. cooling tech changed 5 times since data centre opened.
-6. cooling coils above server racks collect heat then transfer to towers on the roof to cool. then recirculated/
-7. old harddrives cleared and crushed then recycled
-
-innovation always moving
-
-## Capital expense
-- Rent building
-- Buying hardware
-- Uiring security guards
-- Utilitie bills
-
-example xmas
-xmas service is peek time as oppose to janurary
-
-cloud server peek time is always
-
-### AWS EC2
 
 
 
-#### Common commands for AWS EC2
-scp or rsync
-
-#### Planning
-- choose family - t2 micro / medium / large ..
-
-- hard drive
-- memory
-- space
-- fire wall
-- size of machine
-- choosing an OS - ubuntu 18.04LTS
-
-##### process 
-1. Search ec2,
-2. Create instance
-3. select machine - ubuntu 18.04 LTS server
-4. Select tags eng114_...
-5. Select security rules 
-- ec2 allows port 22 by default
-- nginx port 80
-- app port 3000
-
-##### copy files from localhost to EC2
-`scp -i [key_file] -r [path to folder/file you want copied] [path to location you want file to go to]:~`
-
-###### AWS Network Diagram
-![AWS App and Database Diagram](./images/aws_diagram_pt2.jpg)
-
-###### Two tier network
-![Two tier diagram](./images/aws_two_tier_diagram.jpg)
-
-
-##### What are Amazon machine images (AMI)
-Takes a snap shot of the machine and it's data at that time
-
-
-
-### Commands for aws s3
-
-
-
-![EC2 to S3 diagram](./images/EC2_to_S3_diagram.jpg)
-
- - To copy a file from ec2 to aws s3
- `aws s3 cp text.txt s3://my-bucket`
